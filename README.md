@@ -1,5 +1,8 @@
 # socks
-Vue Component Template
+
+Usually vue.js starts with ToDo or Socks. 
+I decided that my "socks" should be like this. 
+So I support the Belarusian product.
 
 http://ideveloper.by/vue/socks/index.html
 
