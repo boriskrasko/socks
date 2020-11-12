@@ -8,11 +8,11 @@ Vue.component('product', {
 	template: `
 		<div class="product row">
 
-        	<div class="product-image col-md-6">
+        	<div class="product-image col-lg-6">
         		<img :src="image" :title="description" :alt="description">
         	</div>
 
-        	<div class="product-info col-md-6">
+        	<div class="product-info col-lg-6">
         		<h2>{{product}}</h2>
         		<p>Shipping: {{shipping}}</p>
         		<p>inStock: ({{inStock}})</p>
@@ -150,11 +150,11 @@ Vue.component('warm', {
 	template:`
 		<div class="product row">
 
-        	<div class="product-image col-md-6">
+        	<div class="product-image col-lg-6">
         		<img :src="image" :title="description" :alt="description">
         	</div>
 
-        	<div class="product-info col-md-6">
+        	<div class="product-info col-lg-6">
         		<h2>{{product}}</h2>
         		<p>Shipping: {{shipping}}</p>
         		<p>inStock: ({{inStock}})</p>
@@ -274,11 +274,11 @@ Vue.component('product2', {
 	template: `
 		<div class="product row">
 
-        	<div class="product-image col-md-6">
+        	<div class="product-image col-lg-6">
         		<img :src="image" :title="description" :alt="description">
         	</div>
 
-        	<div class="product-info col-md-6">
+        	<div class="product-info col-lg-6">
         		<h2>{{product}}</h2>
         		<p>Shipping: {{shipping}}</p>
         		<p>inStock: ({{inStock}})</p>
