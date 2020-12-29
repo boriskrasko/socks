@@ -1,4 +1,4 @@
-# template socks shop page built using VUE and Bootstrap
+## template socks shop page built using VUE and Bootstrap
 As a rule vue.js starts with ToDo or Socks.
 
 I decided that my "socks" should be like this. 
