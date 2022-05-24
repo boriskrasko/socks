@@ -6,52 +6,49 @@ Vue.component("product", {
     },
   },
   template: `
-        <div class="product row">
-            <div class="product-image col-lg-6">
-                <img :src="image" :title="description" :alt="description">
-            </div>
-            <div class="product-info col-lg-6">
-                <h2>{{product}}</h2>
-                <p>Shipping: {{shipping}}</p>
-                <p>inStock: ({{inStock}})</p>
-                <p :style="{color: 'green'}" v-if="inStock > 10">In Stock</p>
-                <p :style="{color: 'orange'}" v-else-if="inStock <= 10 && inStock > 0">Almost sold out!</p>
-                <p :style="{color: 'red'}" v-else>Out of Stock</p>
-                <span :style="{color: '#f01'}" v-show="onSale">ON SALE!</span>
-                <ul>
-                    <li v-for="detail in details">{{detail}}</li>
-                </ul>
-                <div :style="{backgroundColor: variant.variantColorHex}" class="select-color color-box" v-for="(variant, index) in  variants" :key="variant.variantId" @mouseover="updateProduct(index)"> 
-                    <!--<p>{{variant.variantColor}}</p>-->
-                </div>
-                <ul>
-                    <li v-for="size in sizes">{{size}}</li>
-                </ul>
-                <div class="cart">
-                    <img src="img/shopping-cart.png" alt="">
-                    <p :style="{float: 'right', marginLeft: '10px'}">
-                        ({{this.variants[this.selectedVariant].soldQuantity}})
-                    </p>
-                </div>
-                <button :disabled="inStock < 1" class="btn btn-primary" v-on:click="addToCart">
-                    Add to cart
-                </button>
-                <button class="btn btn-secondary" v-on:click="removeFromCart">
-                    Remove from cart
-                </button>
-                <button class="btn btn-warning" v-on:click="resetCart">
-                    Reset cart
-                </button>
-            </div>
-        </div>
+  <div class="product row">
+    <div class="product-image col-lg-6">
+      <img :src="image" :title="description" :alt="description">
+    </div>
+    <div class="product-info col-lg-6">
+      <h2>{{product}}</h2>
+      <p>Shipping: {{shipping}}</p>
+      <p>inStock: ({{inStock}})</p>
+      <p :style="{color: 'green'}" v-if="inStock > 10">In Stock</p>
+      <p :style="{color: 'orange'}" v-else-if="inStock <= 10 && inStock > 0">Almost sold out!</p>
+      <p :style="{color: 'red'}" v-else>Out of Stock</p>
+      <span :style="{color: '#f01'}" v-show="onSale">ON SALE!</span>
+      <ul>
+        <li v-for="detail in details">{{detail}}</li>
+      </ul>
+      <div :style="{backgroundColor: variant.variantColorHex}" class="select-color color-box" v-for="(variant, index) in  variants" :key="variant.variantId" @mouseover="updateProduct(index)">
+        <!--<p>{{variant.variantColor}}</p>-->
+      </div>
+      <ul>
+        <li v-for="size in sizes">{{size}}</li>
+      </ul>
+      <div class="cart">
+        <img src="img/shopping-cart.png" alt="">
+        <p :style="{float: 'right', marginLeft: '10px'}">
+          ({{this.variants[this.selectedVariant].soldQuantity}})
+        </p>
+      </div>
+      <button :disabled="inStock < 1" class="btn btn-primary" v-on:click="addToCart">
+      Add to cart
+      </button>
+      <button class="btn btn-secondary" v-on:click="removeFromCart">
+      Remove from cart
+      </button>
+      <button class="btn btn-warning" v-on:click="resetCart">
+      Reset cart
+      </button>
+    </div>
+  </div>
     `,
   data() {
     return {
       description: "A pair of warm, fuzzy socks",
       product: "Socks",
-      // image: "img/cashmeresocks_alabaster__hero-alt.jpg",
-      // inStock: true,
-      // inventory: 20,
       onSale: true,
       details: ["95% cotton", "5% polyester", "Gender-neutral"],
       sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
@@ -145,43 +142,43 @@ Vue.component("product", {
 Vue.component("warm", {
   template: `
   <div class="product row">
-  <div class="product-image col-lg-6">
-    <img :src="image" :title="description" :alt="description">
-  </div>
-  <div class="product-info col-lg-6">
-    <h2>{{product}}</h2>
-    <p>Shipping: {{shipping}}</p>
-    <p>inStock: ({{inStock}})</p>
-    <p :style="{color: 'green'}" v-if="inStock > 10">In Stock</p>
-    <p :style="{color: 'orange'}" v-else-if="inStock <= 10 && inStock > 0">Almost sold out!</p>
-    <p :style="{color: 'red'}" v-else>Out of Stock</p>
-    <span :style="{color: '#f01'}" v-show="onSale">ON SALE!</span>
-    <ul>
-      <li v-for="detail in details">{{detail}}</li>
-    </ul>
-    <div :style="{backgroundColor: variant.variantColorHex}" class="select-color color-box" v-for="(variant, index) in  variants" :key="variant.variantId" @mouseover="updateProduct(index)">
-      <!--<p>{{variant.variantColor}}</p>-->
+    <div class="product-image col-lg-6">
+      <img :src="image" :title="description" :alt="description">
     </div>
-    <ul>
-      <li v-for="size in sizes">{{size}}</li>
-    </ul>
-    <div class="cart">
-      <img src="img/shopping-cart.png" alt="">
-      <p :style="{float: 'right', marginLeft: '10px'}">
-        ({{this.variants[this.selectedVariant].soldQuantity}})
-      </p>
+    <div class="product-info col-lg-6">
+      <h2>{{product}}</h2>
+      <p>Shipping: {{shipping}}</p>
+      <p>inStock: ({{inStock}})</p>
+      <p :style="{color: 'green'}" v-if="inStock > 10">In Stock</p>
+      <p :style="{color: 'orange'}" v-else-if="inStock <= 10 && inStock > 0">Almost sold out!</p>
+      <p :style="{color: 'red'}" v-else>Out of Stock</p>
+      <span :style="{color: '#f01'}" v-show="onSale">ON SALE!</span>
+      <ul>
+        <li v-for="detail in details">{{detail}}</li>
+      </ul>
+      <div :style="{backgroundColor: variant.variantColorHex}" class="select-color color-box" v-for="(variant, index) in  variants" :key="variant.variantId" @mouseover="updateProduct(index)">
+        <!--<p>{{variant.variantColor}}</p>-->
+      </div>
+      <ul>
+        <li v-for="size in sizes">{{size}}</li>
+      </ul>
+      <div class="cart">
+        <img src="img/shopping-cart.png" alt="">
+        <p :style="{float: 'right', marginLeft: '10px'}">
+          ({{this.variants[this.selectedVariant].soldQuantity}})
+        </p>
+      </div>
+      <button :disabled="inStock < 1" class="btn btn-primary" v-on:click="addToCart">
+      Add to cart
+      </button>
+      <button class="btn btn-secondary" v-on:click="removeFromCart">
+      Remove from cart
+      </button>
+      <button class="btn btn-warning" v-on:click="resetCart">
+      Reset cart
+      </button>
     </div>
-    <button :disabled="inStock < 1" class="btn btn-primary" v-on:click="addToCart">
-    Add to cart
-    </button>
-    <button class="btn btn-secondary" v-on:click="removeFromCart">
-    Remove from cart
-    </button>
-    <button class="btn btn-warning" v-on:click="resetCart">
-    Reset cart
-    </button>
   </div>
-</div>
     `,
   data() {
     return {
@@ -261,43 +258,43 @@ Vue.component("product2", {
   },
   template: `
   <div class="product row">
-  <div class="product-image col-lg-6">
-    <img :src="image" :title="description" :alt="description">
-  </div>
-  <div class="product-info col-lg-6">
-    <h2>{{product}}</h2>
-    <p>Shipping: {{shipping}}</p>
-    <p>inStock: ({{inStock}})</p>
-    <p :style="{color: 'green'}" v-if="inStock > 10">In Stock</p>
-    <p :style="{color: 'orange'}" v-else-if="inStock <= 10 && inStock > 0">Almost sold out!</p>
-    <p :style="{color: 'red'}" v-else>Out of Stock</p>
-    <span :style="{color: '#f01'}" v-show="onSale">ON SALE!</span>
-    <ul>
-      <li v-for="detail in details">{{detail}}</li>
-    </ul>
-    <div :style="{backgroundColor: variant.variantColorHex}" class="select-color color-box" v-for="(variant, index) in  variants" :key="variant.variantId" @mouseover="updateProduct(index)">
-      <!--<p>{{variant.variantColor}}</p>-->
+    <div class="product-image col-lg-6">
+      <img :src="image" :title="description" :alt="description">
     </div>
-    <ul>
-      <li v-for="size in sizes">{{size}}</li>
-    </ul>
-    <div class="cart">
-      <img src="img/shopping-cart.png" alt="">
-      <p :style="{float: 'right', marginLeft: '10px'}">
-        ({{this.variants[this.selectedVariant].soldQuantity}})
-      </p>
+    <div class="product-info col-lg-6">
+      <h2>{{product}}</h2>
+      <p>Shipping: {{shipping}}</p>
+      <p>inStock: ({{inStock}})</p>
+      <p :style="{color: 'green'}" v-if="inStock > 10">In Stock</p>
+      <p :style="{color: 'orange'}" v-else-if="inStock <= 10 && inStock > 0">Almost sold out!</p>
+      <p :style="{color: 'red'}" v-else>Out of Stock</p>
+      <span :style="{color: '#f01'}" v-show="onSale">ON SALE!</span>
+      <ul>
+        <li v-for="detail in details">{{detail}}</li>
+      </ul>
+      <div :style="{backgroundColor: variant.variantColorHex}" class="select-color color-box" v-for="(variant, index) in  variants" :key="variant.variantId" @mouseover="updateProduct(index)">
+        <!--<p>{{variant.variantColor}}</p>-->
+      </div>
+      <ul>
+        <li v-for="size in sizes">{{size}}</li>
+      </ul>
+      <div class="cart">
+        <img src="img/shopping-cart.png" alt="">
+        <p :style="{float: 'right', marginLeft: '10px'}">
+          ({{this.variants[this.selectedVariant].soldQuantity}})
+        </p>
+      </div>
+      <button :disabled="inStock < 1" class="btn btn-primary" v-on:click="addToCart">
+      Add to cart
+      </button>
+      <button class="btn btn-secondary" v-on:click="removeFromCart">
+      Remove from cart
+      </button>
+      <button class="btn btn-warning" v-on:click="resetCart">
+      Reset cart
+      </button>
     </div>
-    <button :disabled="inStock < 1" class="btn btn-primary" v-on:click="addToCart">
-    Add to cart
-    </button>
-    <button class="btn btn-secondary" v-on:click="removeFromCart">
-    Remove from cart
-    </button>
-    <button class="btn btn-warning" v-on:click="resetCart">
-    Reset cart
-    </button>
   </div>
-</div>
     `,
   data() {
     return {
