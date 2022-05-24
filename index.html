@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Product App</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
-      <link rel="stylesheet" href="style.css">
-      <script src="https://unpkg.com/vue"></script>
-   </head>
-   <body>
-      <div id="app" class="container">
-         <h1>{{title}}</h1>
-         <p>{{description}}</p>
-         <img v-bind:src="logo" alt="">
-         <a :href="link">{{more}}</a>
-         <product :premium="premium"></product>
-         <warm></warm>
-         <product2></product2>
-         <warm></warm>
-      </div>
-      <script src="main.js"></script>
-   </body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Product App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@2"></script>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+      <img v-bind:src="logo" alt="" />
+      <a :href="link">{{more}}</a>
+      <product :premium="premium"></product>
+      <warm></warm>
+      <product2></product2>
+      <warm></warm>
+    </div>
+    <script src="main.js"></script>
+  </body>
 </html>
